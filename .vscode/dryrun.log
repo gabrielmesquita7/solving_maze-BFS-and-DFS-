@@ -1,0 +1,8 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/gabriel/Área de Trabalho/solving_maze-BFS-and-DFS-'
+mkdir -p ./build/
+mkdir -p ./build/objects
+mkdir -p build/
+gcc -Wall -Wextra -Werror -Iinclude/ -lstdc++ -lm -o ./build//app src/lista.c src/main.c src/pilha.c src/matriz.c
+make: Leaving directory '/home/gabriel/Área de Trabalho/solving_maze-BFS-and-DFS-'
+ 

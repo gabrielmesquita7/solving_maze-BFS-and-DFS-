@@ -1,9 +1,15 @@
 #include "lista.h"
 #include "pilha.h"
+#include "matriz.h"
 
 int main(){
+	FILE *myfile = fopen ("gameconfig.txt", "r");
+	SearchType st;
+	Matriz* m = TokenizerM(myfile, st); 
+	print_matriz(m);
+	printf("a: %s", st.searchtype);
 
-	Lista l;
+/*	Lista l;
 	Item aux;
 	Pilha p;
 	Pitem paux;
@@ -41,6 +47,6 @@ int main(){
 	PRemove(&p, paux);
 	
 	PImprime(&p);
-
+*/
 	return 0;
 }
