@@ -17,6 +17,7 @@ struct Matriz {
     int rows;
     int cols;
     int** data;
+    int** vis;
 };
 typedef struct Matriz Matriz;
 

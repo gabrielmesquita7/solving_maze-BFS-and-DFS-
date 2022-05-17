@@ -5,9 +5,13 @@
 int main(){
 	FILE *myfile = fopen ("gameconfig.txt", "r");
 	SearchType st;
-	Matriz* m = TokenizerM(myfile, st); 
+	Matriz *m = TokenizerM(myfile, st); 
 	print_matriz(m);
-	printf("a: %s", st.searchtype);
+	Lista *l = malloc(sizeof(Lista));
+
+
+	FLVazia(l);
+	LPercorre(l, m);
 
 /*	Lista l;
 	Item aux;

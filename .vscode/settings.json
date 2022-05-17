@@ -2,6 +2,7 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
         "pilha.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "matriz.h": "c"
     }
 }

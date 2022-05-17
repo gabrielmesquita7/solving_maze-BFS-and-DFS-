@@ -1,14 +1,18 @@
+#include "lista.h"
 #include "matriz.h"
 
 Matriz* criar_matriz(int rows, int cols){
     struct Matriz* matriz = malloc(sizeof(Matriz));
     matriz->rows = rows;
     matriz->cols = cols;
-    int** data = malloc(sizeof(int*) * rows); 
+    int** data = malloc(sizeof(int*) * rows);
+    int** vis = malloc(sizeof(int*) * rows); 
     for(int i = 0; i < rows; i++){
         data[i] = calloc(cols, sizeof(int));
+        vis[i] = calloc(cols, sizeof(int));
     }
     matriz->data = data;
+    matriz->vis = vis;
     return matriz;
 }
 
@@ -17,6 +21,7 @@ Matriz* preenche_matriz(int rows, int cols) {
     for(int x = 0; x < rows; x++) {
         for(int y = 0; y < cols; y++) {
             matriz->data[x][y] = 0;
+            matriz->vis[x][y] = -1;
         }
     }
     return matriz;    
@@ -25,7 +30,15 @@ Matriz* preenche_matriz(int rows, int cols) {
 void print_matriz(Matriz* m){
     for(int x = 0; x < m->rows; x++) {
         for(int y = 0; y < m->cols; y++) {
-            printf("%d\t", m->data[x][y]);
+            if(m->vis[x][y] == -1){
+                if(m->data[x][y]==0){
+                    printf("O\t");
+                }else{
+                    printf("X\t");
+                }
+            }else{
+                printf("%d\t", m->vis[x][y]);
+            }
         }
         printf("\n");
     }
@@ -101,4 +114,3 @@ Matriz* TokenizerM(FILE *ptr, SearchType st){
     printf("\n\n");
     return m1;
 }
-
