@@ -45,7 +45,7 @@ void print_matriz(Matriz* m){
     printf("\n");
 }
 
-Matriz* TokenizerM(FILE *ptr, SearchType st){
+Matriz* TokenizerM(FILE *ptr, SearchType *st){
     char buff[MAXC] = "";
 	char *token = NULL;
 	const char *delim = " x[,]";
@@ -91,9 +91,8 @@ Matriz* TokenizerM(FILE *ptr, SearchType st){
         }
         if(counter == 2){
             for (token = strtok(buff, delim); token; token = strtok(NULL, delim)){
-                printf("%s\n", token);
                 strcpy(cp, token);
-                strcpy(st.searchtype, token);
+                strcpy(st->searchtype, token);
 		    }
         }
         counter++;
@@ -110,7 +109,20 @@ Matriz* TokenizerM(FILE *ptr, SearchType st){
         c++;
     }
     //
-    printf("a: %s", cp);
     printf("\n\n");
     return m1;
+}
+
+void TipoCaminho(Matriz *m, SearchType *st){
+    if(strcmp(st->searchtype, "BFS") == 0){
+        Lista *l = malloc(sizeof(Lista));
+        FLVazia(l);
+        LPercorre(l, m);
+    }else{
+        if(strcmp(st->searchtype, "DFS") == 0){
+
+        }else{
+            printf("Método inválido!");
+        }
+    }
 }

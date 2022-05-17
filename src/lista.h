@@ -6,7 +6,7 @@
 #include<stdbool.h>
 #include "matriz.h"
 
-#define MAXLIST 50
+#define MAXLIST 20
 
 typedef struct Item{
 	int l;
@@ -21,7 +21,7 @@ typedef struct Lista{
 
 void FLVazia(Lista *l);
 void LInsert(Lista *l, Item d);
-void LRemove(Lista *l, Item d);
+void LRemove(Lista *l);
 void Swap(Item *a, Item *b);
 void LImprime(Lista *l);
 void LPercorre(Lista *l, Matriz *m);

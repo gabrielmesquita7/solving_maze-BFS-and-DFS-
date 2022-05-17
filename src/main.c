@@ -4,14 +4,10 @@
 
 int main(){
 	FILE *myfile = fopen ("gameconfig.txt", "r");
-	SearchType st;
-	Matriz *m = TokenizerM(myfile, st); 
+	SearchType *st = malloc(sizeof(char)*20);
+	Matriz *m = TokenizerM(myfile, st);
 	print_matriz(m);
-	Lista *l = malloc(sizeof(Lista));
-
-
-	FLVazia(l);
-	LPercorre(l, m);
+	TipoCaminho(m, st);
 
 /*	Lista l;
 	Item aux;

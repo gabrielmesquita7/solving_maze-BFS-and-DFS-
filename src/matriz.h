@@ -24,7 +24,8 @@ typedef struct Matriz Matriz;
 Matriz* criar_matriz(int rows, int cols);
 Matriz* preenche_matriz(int rows, int cols);
 void print_matriz(Matriz* m);
-Matriz* TokenizerM(FILE *ptr, SearchType st);
+Matriz* TokenizerM(FILE *ptr, SearchType *st);
+void TipoCaminho(Matriz *m, SearchType *st);
 
 
  

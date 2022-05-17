@@ -22,20 +22,11 @@ void LInsert(Lista *l, Item d){
 	}
 }
 
-void LRemove(Lista *l, Item d){
-	bool ok = false;
-
-	if(l->first == l->last)
+void LRemove(Lista *l){
+	if(l->first == l->last){
 		printf("LISTA VAZIA!\n");
-	else{
-		for(int i=l->first; i<l->last; i++)
-			if(l->vet[i].l == d.l && l->vet[i].c == d.c){
-				Swap(&l->vet[i], &l->vet[i+1]);
-				ok = true;	
-			}
-	
-		if(ok)
-			l->last --;
+	}else{
+		l->first++;
 	}
 }
 
@@ -51,15 +42,18 @@ void LPercorre(Lista *l, Matriz *m){
 	pos.l = 0;
 	pos.c = 0;
 	LInsert(l, pos);
-	int cont = l->first, cont2 = l->first+1;
+	int cont = l->first, cont2 = l->first+1, cont3 = 1;
 	m->vis[pos.l][pos.c] = cont;
-	while((l->vet[cont].l != m->rows-1 || l->vet[cont].c != m->cols-1) || cont == l->last){
+	while((l->vet[cont].l < m->rows-1 || l->vet[cont].c < m->cols-1) && cont < l->last){
 		if((l->vet[cont].l)+1 < m->rows && m->data[(l->vet[cont].l)+1][l->vet[cont].c] != -1 && m->vis[l->vet[cont].l+1][l->vet[cont].c] == -1){
 			pos.l = l->vet[cont].l+1;
 			pos.c = l->vet[cont].c;
 			LInsert(l, pos);
 			m->vis[pos.l][pos.c] = cont2;
 			cont2++;
+		}
+		if((l->vet[cont].l)+1 < m->rows){
+			cont3++;
 		}
 		if(l->vet[cont].c+1 < m->cols && m->data[l->vet[cont].l][l->vet[cont].c+1] != -1 && m->vis[l->vet[cont].l][l->vet[cont].c+1] == -1){
 			pos.l = l->vet[cont].l;
@@ -68,13 +62,16 @@ void LPercorre(Lista *l, Matriz *m){
 			m->vis[pos.l][pos.c] = cont2;
 			cont2++;
 		}
+		if((l->vet[cont].c)+1 < m->cols){
+			cont3++;
+		}
 		cont++;
 	}
 	if(l->vet[cont].l == m->rows-1 && l->vet[cont].c == m->cols-1){
-		printf("Número de interações: %d\n", cont);
-		LImprime(l);
+		printf("Número de interações: %d\n", cont3);
 		print_matriz(m);
 	}else{
+		print_matriz(m);
 		printf("Obstáculo no caminho, impossível chegar ao fim.");
 	}
 }
