@@ -4,11 +4,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
+#include "matriz.h"
 
-#define MAXTAM 10
+#define MAXTAM 50
 
 typedef struct Pitem{
-	int val;
+	int l;
+	int c;
 }Pitem;
 
 typedef struct Pilha{
@@ -20,7 +22,6 @@ typedef struct Pilha{
 void FPVazia(Pilha *p);
 void PUSH(Pilha *p, Pitem d);
 void POP(Pilha *p, Pitem *d);
-void PRemove(Pilha *p, Pitem d);
-void PImprime(Pilha *p);
+void DFS(Pilha *l, Matriz *m);
 
 #endif

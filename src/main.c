@@ -1,6 +1,6 @@
 #include "lista.h"
 #include "pilha.h"
-#include "matriz.h"
+
 
 int main(){
 	FILE *myfile = fopen ("gameconfig.txt", "r");

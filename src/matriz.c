@@ -1,4 +1,5 @@
 #include "lista.h"
+#include "pilha.h"
 #include "matriz.h"
 
 Matriz* criar_matriz(int rows, int cols){
@@ -120,7 +121,9 @@ void TipoCaminho(Matriz *m, SearchType *st){
         LPercorre(l, m);
     }else{
         if(strcmp(st->searchtype, "DFS") == 0){
-
+            Pilha *p = malloc(sizeof(Pilha));
+            FPVazia(p);
+            DFS(p, m);
         }else{
             printf("Método inválido!");
         }

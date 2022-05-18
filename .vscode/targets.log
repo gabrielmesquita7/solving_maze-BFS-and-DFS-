@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat May 14 17:44:21 2022
+# Make data base, printed on Tue May 17 20:23:52 2022
 
 # Variables
 
@@ -131,7 +131,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 77857
+GIO_LAUNCHED_DESKTOP_FILE_PID = 124649
 # automatic
 %F = $(notdir $%)
 # environment
@@ -197,7 +197,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-ee335936-4ef4-4c5a-9b4b-44c0d9da3349.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-17a65c20-a7f3-4ed3-9984-13b32eea9694.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -287,7 +287,7 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 77907
+VSCODE_PID = 124698
 # makefile (from 'Makefile', line 6)
 APP_DIR := ./build/
 # variable set hash-table stats:
@@ -299,11 +299,11 @@ APP_DIR := ./build/
 
 # Directories
 
-# . (device 66308, inode 1212427): 9 files, no impossibilities.
-# src (device 66308, inode 1222040): 9 files, no impossibilities.
+# . (device 66308, inode 1220609): 9 files, no impossibilities.
+ 
+# src (device 66308, inode 1221451): 9 files, no impossibilities.
 
 # 18 files, no impossibilities in 2 directories.
- 
 
 # Implicit Rules
 
@@ -346,7 +346,7 @@ all: build build//app
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-09 11:35:22.907566757
+#  Last modified 2022-05-17 18:35:40.59673351
 #  File has been updated.
 #  Successfully updated.
 
@@ -462,6 +462,6 @@ src/matriz.c:
 # strcache performance: lookups = 63 / hit rate = 47%
 # hash-table stats:
 # Load=33/8192=0%, Rehash=0, Collisions=2/63=3%
-# Finished Make data base on Sat May 14 17:44:21 2022
+# Finished Make data base on Tue May 17 20:23:52 2022
 
  

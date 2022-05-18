@@ -1,5 +1,5 @@
 #include "lista.h"
-#include "matriz.h"
+
 
 void Swap(Item *a, Item *b){
 	Item aux;
@@ -72,7 +72,7 @@ void LPercorre(Lista *l, Matriz *m){
 		print_matriz(m);
 	}else{
 		print_matriz(m);
-		printf("Obstáculo no caminho, impossível chegar ao fim.");
+		printf("Obstáculo no caminho, impossível chegar ao fim.\n");
 	}
 }
 
