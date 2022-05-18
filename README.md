@@ -21,8 +21,9 @@
 ### Regras
 1. O jogo deve ser elaborado utilizando um arquivo de configuração. Nele deve conter: (a) tamanho da matriz; (b) posições das paredes e; (c) tipo de busca.
 1. O jogo termina assim que for atingido o alvo.
-
 1. É preciso imprimir o caminho em tela sob uma representação de matriz. Então, imprima conforme o exercício de matriz já realizado.
+  ![image](https://user-images.githubusercontent.com/55333375/169049899-b17b7be9-8a69-4b39-8b7e-d7464130bb87.png)
+
 
 ### Perguntas
 * Para diferentes tamanhos de matriz e posicionamento de paredes, há predominância de um dos dois algoritmos em termos de casas caminhadas e tempo de execução?
@@ -41,9 +42,16 @@
 * ![image](https://user-images.githubusercontent.com/55333375/167706445-478ff54e-dc10-482c-a0a5-ccbca8d0e7f6.png)
 
 * É feito a abertura do arquivo por meio do **fopen()** e depois tokenizado pela função **TokenizerM()**, dentro dessa função a primeira coisa sendo feita é a tokenização do tamanho da matriz, da posição dos obstaculos e do tipo de busca, e por fim iniciado a matriz de acordo com os parametros e retornando a mesma.
+![image](https://user-images.githubusercontent.com/55333375/169050608-887c45c1-2866-4355-9179-97e663b8ff0a.png)
+![image](https://user-images.githubusercontent.com/55333375/169050955-d566d211-5d66-4aae-964f-9844bcf0432f.png)
+
+
 
 * Depois é executado a função **TipoCaminho()**
 * Dentro da função é feito a passagem de um if/else com o tipo de busca especificado no arquivo de texto  para determinar o método a ser executado, por fim é executado o método escolhido.
+
+![image](https://user-images.githubusercontent.com/55333375/169051182-a70aa339-8f9a-49bd-98d2-1e13291ace08.png)
+
 * Por fim é impresso a matriz com o caminho percorrido
 
 # Entrada
@@ -54,11 +62,17 @@ Linha   | variavel
 2 | ( l x c ) , ( l x c ) , ... -> Posições dos obstaculos
 3 | Tipo de busca
 
+![image](https://user-images.githubusercontent.com/55333375/169051599-1ae89acc-3e9b-420a-ad42-a2a76e61ded1.png)
+
+
 # Interacoes
 ### A contagem do numero de interações foi calculado de forma que considera cada checagem uma interação, ou seja, mesmo se houver obstaculo no caminho é contabilizado.
 
 # Saida
 ### É esperado que a saida tenha o print da matriz após tokenizada, depois a matriz com o caminho percorrido de acordo com o tipo escolhido e por fim o numero de interações que aquele tipo gastou
+
+![image](https://user-images.githubusercontent.com/55333375/169051933-ae3c975f-974d-4052-9f4c-9be420798ec3.png)
+
 
 
 
