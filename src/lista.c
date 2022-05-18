@@ -42,8 +42,9 @@ void LPercorre(Lista *l, Matriz *m){
 	pos.l = 0;
 	pos.c = 0;
 	LInsert(l, pos);
-	int cont = l->first, cont2 = l->first+1, cont3 = 1;
-	m->vis[pos.l][pos.c] = cont;
+	int cont = l->first, cont2 = l->first+1;
+	m->vis[pos.l][pos.c] = cont2;
+	cont2++;
 	while((l->vet[cont].l < m->rows-1 || l->vet[cont].c < m->cols-1) && cont < l->last){
 		if((l->vet[cont].l)+1 < m->rows && m->data[(l->vet[cont].l)+1][l->vet[cont].c] != -1 && m->vis[l->vet[cont].l+1][l->vet[cont].c] == -1){
 			pos.l = l->vet[cont].l+1;
@@ -52,9 +53,6 @@ void LPercorre(Lista *l, Matriz *m){
 			m->vis[pos.l][pos.c] = cont2;
 			cont2++;
 		}
-		if((l->vet[cont].l)+1 < m->rows){
-			cont3++;
-		}
 		if(l->vet[cont].c+1 < m->cols && m->data[l->vet[cont].l][l->vet[cont].c+1] != -1 && m->vis[l->vet[cont].l][l->vet[cont].c+1] == -1){
 			pos.l = l->vet[cont].l;
 			pos.c = l->vet[cont].c+1;
@@ -62,13 +60,24 @@ void LPercorre(Lista *l, Matriz *m){
 			m->vis[pos.l][pos.c] = cont2;
 			cont2++;
 		}
-		if((l->vet[cont].c)+1 < m->cols){
-			cont3++;
+		if(l->vet[cont].c-1 >= 0 && m->data[l->vet[cont].l][l->vet[cont].c-1] != -1 && m->vis[l->vet[cont].l][l->vet[cont].c-1] == -1){
+			pos.l = l->vet[cont].l;
+			pos.c = l->vet[cont].c-1;
+			LInsert(l, pos);
+			m->vis[pos.l][pos.c] = cont2;
+			cont2++;
+		}
+		if((l->vet[cont].l)-1 >= 0 && m->data[(l->vet[cont].l)-1][l->vet[cont].c] != -1 && m->vis[l->vet[cont].l-1][l->vet[cont].c] == -1){
+			pos.l = l->vet[cont].l-1;
+			pos.c = l->vet[cont].c;
+			LInsert(l, pos);
+			m->vis[pos.l][pos.c] = cont2;
+			cont2++;
 		}
 		cont++;
 	}
 	if(l->vet[cont].l == m->rows-1 && l->vet[cont].c == m->cols-1){
-		printf("Número de interações: %d\n", cont3);
+		printf("Número de interações: %d\n", cont2-1);
 		print_matriz(m);
 	}else{
 		print_matriz(m);
