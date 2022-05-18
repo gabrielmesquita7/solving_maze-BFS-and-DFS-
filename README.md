@@ -22,6 +22,7 @@
 1. O jogo deve ser elaborado utilizando um arquivo de configuração. Nele deve conter: (a) tamanho da matriz; (b) posições das paredes e; (c) tipo de busca.
 1. O jogo termina assim que for atingido o alvo.
 1. É preciso imprimir o caminho em tela sob uma representação de matriz. Então, imprima conforme o exercício de matriz já realizado.
+
   ![image](https://user-images.githubusercontent.com/55333375/169049899-b17b7be9-8a69-4b39-8b7e-d7464130bb87.png)
 
 
