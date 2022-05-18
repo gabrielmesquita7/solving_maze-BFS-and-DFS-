@@ -28,7 +28,9 @@
 
 ### Perguntas
 * Para diferentes tamanhos de matriz e posicionamento de paredes, há predominância de um dos dois algoritmos em termos de casas caminhadas e tempo de execução?
+* R: **Há predominancia do BFS em numero de interações e casas caminhadas, pois sendo um metodo que caminha em ondas a maioria das matrizes é percorrida quase inteira**
 * Um dos dois algoritmos consegue encontrar o melhor caminho, ou seja, o com menor número de passos?
+* R: **Depende, se levarmos em consideração somente os dois o DFS é o que encontra o melhor caminho, porém se compararmos outros algaritmos nenhum dos dois consegue ser o melhor em termos de menor numero de passos**
 
 # Desenvolvimento
 ### O problema foi desenvolvido da seguinte maneira:
