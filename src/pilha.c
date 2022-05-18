@@ -156,11 +156,11 @@ void DFS(Pilha *p, Matriz *m){
 		}
 	}
 	if(i == m->rows-1 && j == m->cols-1){
-		printf("BFS: \n");
+		printf("DFS: \n");
 		print_matriz(m);
 		printf("Numero de interacoes: %d\n", count2);
 	}else{
-		printf("Obstaculo no caminho, impossivel chegar ao fim.");
+		printf("Obstaculo no caminho, impossivel chegar ao fim.\n");
 	}
 }
 

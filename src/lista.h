@@ -24,6 +24,6 @@ void LInsert(Lista *l, Item d);
 void LRemove(Lista *l);
 void Swap(Item *a, Item *b);
 void LImprime(Lista *l);
-void LPercorre(Lista *l, Matriz *m);
+void BFS(Lista *l, Matriz *m);
 
 #endif

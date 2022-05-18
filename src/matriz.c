@@ -55,7 +55,7 @@ Matriz* TokenizerM(FILE *ptr, SearchType *st){
     int auxc[60];
     for(int i=0;i<60;i++){ auxl[i] = 0; auxc[i] = 0;}
     int l = 0, c = 0;
-    char cp[20] = "";
+
   
 
     if (!ptr){
@@ -92,7 +92,6 @@ Matriz* TokenizerM(FILE *ptr, SearchType *st){
         }
         if(counter == 2){
             for (token = strtok(buff, delim); token; token = strtok(NULL, delim)){
-                strcpy(cp, token);
                 strcpy(st->searchtype, token);
 		    }
         }
@@ -118,7 +117,7 @@ void TipoCaminho(Matriz *m, SearchType *st){
     if(strcmp(st->searchtype, "BFS") == 0){
         Lista *l = malloc(sizeof(Lista));
         FLVazia(l);
-        LPercorre(l, m);
+        BFS(l, m);
     }else{
         if(strcmp(st->searchtype, "DFS") == 0){
             Pilha *p = malloc(sizeof(Pilha));

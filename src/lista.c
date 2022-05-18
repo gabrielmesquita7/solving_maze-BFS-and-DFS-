@@ -37,7 +37,7 @@ void LImprime(Lista *l){
 	printf("\n\n");
 }
 
-void LPercorre(Lista *l, Matriz *m){
+void BFS(Lista *l, Matriz *m){
 	Item pos;
 	pos.l = 0;
 	pos.c = 0;
@@ -77,8 +77,9 @@ void LPercorre(Lista *l, Matriz *m){
 		cont++;
 	}
 	if(l->vet[cont].l == m->rows-1 && l->vet[cont].c == m->cols-1){
-		printf("Número de interações: %d\n", cont2-1);
+		printf("BFS: \n");
 		print_matriz(m);
+		printf("Número de interações: %d\n", cont2-1);
 	}else{
 		print_matriz(m);
 		printf("Obstáculo no caminho, impossível chegar ao fim.\n");
