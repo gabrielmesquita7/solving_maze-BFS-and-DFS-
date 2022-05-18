@@ -33,9 +33,9 @@ void DFS(Pilha *p, Matriz *m){
     int count2=p->base+1;
 	PUSH(p, aux);
 	m->vis[aux.l][aux.c] = count2;
-	while((p->vet[i].l != m->rows-1 || p->vet[j].c != m->cols-1) && i < p->top){
+	while((i != m->rows-1 || j != m->cols-1) && i < p->top){
 		if (j == 0){
-			if(i < m->rows-1 && m->data[(p->vet[i].l)+1][p->vet[j].c] != -1 && m->vis[p->vet[i].l+1][p->vet[j].c] == -1){
+			if(i < m->rows-1 && m->data[(i)+1][j] != -1 && m->vis[i+1][j] == -1){
 				i++;
 				aux.l = i;	
 				aux.c = j;
@@ -43,7 +43,7 @@ void DFS(Pilha *p, Matriz *m){
 				m->vis[aux.l][aux.c] = count2;
 				count2++;
 			}
-			else if(m->data[p->vet[i].l][(p->vet[j].c)+1] != -1 && m->vis[p->vet[i].l][p->vet[j].c+1] == -1){
+			else if(m->data[i][j+1] != -1 && m->vis[i][j+1] == -1){
 				j++;
 				aux.l = i;	
 				aux.c = j;
@@ -51,7 +51,7 @@ void DFS(Pilha *p, Matriz *m){
 				m->vis[aux.l][aux.c] = count2;
 				count2++;
 			}
-			else if(m->data[(p->vet[i].l)-1][p->vet[j].c] != -1 && m->vis[p->vet[i].l-1][p->vet[j].c] == -1){
+			else if(m->data[i-1][j] != -1 && m->vis[i-1][j] == -1){
 				i--;
 				aux.l = i;	
 				aux.c = j;
@@ -65,14 +65,14 @@ void DFS(Pilha *p, Matriz *m){
 				i--;
 			}	
 		}else if(i != m->rows-1 && j == m->cols-1){
-			if(i < m->rows-1 && m->data[(p->vet[i].l)+1][p->vet[j].c] != -1 && m->vis[p->vet[i].l+1][p->vet[j].c] == -1){
+			if(i < m->rows-1 && m->data[i+1][j] != -1 && m->vis[i+1][j] == -1){
 				i++;
 				aux.l = i;	
 				aux.c = j;
 				PUSH(p, aux);
 				m->vis[aux.l][aux.c] = count2;
 				count2++;
-			}else if(i < m->rows-1 && m->data[p->vet[i].l][p->vet[j].c-1] != -1 && m->vis[p->vet[i].l][p->vet[j].c-1] == -1){
+			}else if(i < m->rows-1 && m->data[i][j-1] != -1 && m->vis[i][j-1] == -1){
 				j--;
 				aux.l = i;	
 				aux.c = j;
@@ -85,28 +85,28 @@ void DFS(Pilha *p, Matriz *m){
 				POP(p, &aux);
 			}
 		}else{
-			if(i < m->rows-1 && m->data[(p->vet[i].l)+1][p->vet[j].c] != -1 && m->vis[p->vet[i].l+1][p->vet[j].c] == -1){
+			if(i < m->rows-1 && m->data[i+1][j] != -1 && m->vis[i+1][j] == -1){
 				i++;
 				aux.l = i;	
 				aux.c = j;
 				PUSH(p, aux);
 				m->vis[aux.l][aux.c] = count2;
 				count2++;			
-			}else if(m->data[p->vet[i].l][(p->vet[j].c)+1] != -1 && m->vis[p->vet[i].l][p->vet[j].c+1] == -1){
+			}else if(m->data[i][j+1] != -1 && m->vis[i][j+1] == -1){
 				j++;
 				aux.l = i;	
 				aux.c = j;
 				PUSH(p, aux);
 				m->vis[aux.l][aux.c] = count2;
 				count2++;
-			}else if(m->data[p->vet[i].l][p->vet[j].c-1] != -1 && m->vis[p->vet[i].l][p->vet[j].c-1] == -1){
+			}else if(m->data[i][j-1] != -1 && m->vis[i][j-1] == -1){
 				j--;
 				aux.l = i;	
 				aux.c = j;
 				PUSH(p, aux);
 				m->vis[aux.l][aux.c] = count2;
 				count2++;
-			}else if(m->data[(p->vet[i].l)-1][p->vet[j].c] != -1 && m->vis[p->vet[i].l-1][p->vet[j].c] == -1){
+			}else if(m->data[i-1][j] != -1 && m->vis[i-1][j] == -1){
 				i--;
 				aux.l = i;	
 				aux.c = j;
@@ -121,7 +121,7 @@ void DFS(Pilha *p, Matriz *m){
 			}
 		}
 	}
-	if(p->vet[i].l == m->rows-1 && p->vet[j].c == m->cols-1){
+	if(i == m->rows-1 && j == m->cols-1){
 		printf("BFS: \n");
 		print_matriz(m);
 		printf("Numero de interacoes: %d\n", count2);
