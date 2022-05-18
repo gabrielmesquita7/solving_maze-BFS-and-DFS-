@@ -69,12 +69,14 @@ Linha   | variavel
 
 
 # Interacoes
-### A contagem do numero de interações foi calculado de forma que considera cada checagem uma interação, ou seja, mesmo se houver obstaculo no caminho é contabilizado.
+### A contagem do numero de interações foi calculado de forma que considera cada nova posição ocupada na matriz uma interação, ou seja, não sera contabilizado checagens ou mesmo voltar para a mesma posição.
 
 # Saida
 ### É esperado que a saida tenha o print da matriz após tokenizada, depois a matriz com o caminho percorrido de acordo com o tipo escolhido e por fim o numero de interações que aquele tipo gastou
 
-![image](https://user-images.githubusercontent.com/55333375/169051933-ae3c975f-974d-4052-9f4c-9be420798ec3.png)
+![image](https://user-images.githubusercontent.com/55333375/169157091-ad123db6-6269-486d-8870-19af47b68f1b.png)
+
+![image](https://user-images.githubusercontent.com/55333375/169157174-5831f671-328f-4639-9323-971151271d97.png)
 
 
 
